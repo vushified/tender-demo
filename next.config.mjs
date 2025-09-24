@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
-  
-  // Important for API routes to work in production
+  // Remove experimental and swcMinify - they're not needed
   async headers() {
     return [
       {
@@ -17,12 +13,6 @@ const nextConfig = {
       },
     ]
   },
-  
-  // Enable SWC minification for better performance
-  swcMinify: true,
-  
-  // Optimize for Vercel deployment
-  output: 'standalone',
 }
 
 export default nextConfig
